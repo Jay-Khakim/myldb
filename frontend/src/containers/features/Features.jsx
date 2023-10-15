@@ -4,20 +4,20 @@ import './features.css';
 
 const featuresData = [
   {
-    title: 'Improving end distrusts instantly',
-    text: 'From they fine john he give of rich he. They age and draw mrs like. Improving end distrusts may instantly was household applauded.',
+    title: 'Efficient Home Library Management',
+    text: 'Users can effortlessly organize and manage their personal libraries, reducing the time and effort required for manual cataloging.',
   },
   {
-    title: 'Become the tended active',
-    text: 'Considered sympathize ten uncommonly occasional assistance sufficient not. Letter of on become he tended active enable to.',
+    title: 'User Engagement',
+    text: 'Interactive features, such as community discussions and goal-sharing, enhance user engagement, creating a vibrant and supportive reading community',
   },
   {
-    title: 'Message or am nothing',
-    text: 'Led ask possible mistress relation elegance eat likewise debating. By message or am nothing amongst chiefly address.',
+    title: 'User-Friendly Interface',
+    text: 'A responsive and dynamic user interface accessible on web and mobile devices ensures a seamless and intuitive experience for users of various preferences',
   },
   {
-    title: 'Really boy law county',
-    text: 'Really boy law county she unable her sister. Feet you off its like like six. Among sex are leave law built now. In built table in an rapid blush..',
+    title: 'Personalized Reading Experience',
+    text: '"MyLDB" tailors the reading experience to individual preferences, providing a platform for users to curate and customize their literary adventures',
   },
 ];
 

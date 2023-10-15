@@ -1,11 +1,11 @@
 import React from 'react'
 import './footer.css'
-import gpt3Logo from "../../assets/logo.svg"
+import gpt3Logo from "../../assets/MyLDB_logo.svg"
 const Footer = () => {
   return (
     <div className='gpt3__footer section__padding'>
       <div className="gpt3__footer-heading">
-        <h1 className='gradient__text'>Do you want to step in to the future before others</h1>
+        <h1 className='gradient__text'>Do you want to have thousands of books in your home?</h1>
       </div>
 
       <div className='gpt3__footer-btn'>
@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="gpt3__footer-links">
         <div className="gpt3__footer-links_logo">
           <img src={gpt3Logo} alt="" />
-          <p>Crechterwoord K12 182 DK Alknjkcb, <br /> All Rights Reserved</p>
+          <p>47, Jyure-ro, Sasang-gu, Busan, South Korea <br /> All Rights Reserved</p>
         </div>
         <div className="gpt3__footer-links_div">
           <h4>Links</h4>
@@ -31,14 +31,14 @@ const Footer = () => {
         </div>
         <div className="gpt3__footer-links_div">
           <h4>Get in touch</h4>
-          <p>Crechterwoord K12 182 DK Alknjkcb</p>
-          <p>085-132567</p>
-          <p>info@payme.net</p>
+          <p>47, Jyure-ro, Sasang-gu, Busan, South Korea</p>
+          <p>+82 10 8277-7117</p>
+          <p>mgmediajay@gmail.com</p>
         </div>
       </div>
 
       <div className='gpt3__footer-copyright'>
-        <p>@2021 GPT-3. All rights reserved.</p>
+        <p>@2023 MyLDB. All rights reserved.</p>
       </div>
     </div>
   )

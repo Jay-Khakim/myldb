@@ -14,12 +14,16 @@
 }
 
 .gpt3__navbar-links_logo {
+    display: flex;
+    align-items: center;
     margin-right: 2rem;
+    
 }
 
 .gpt3__navbar-links_logo img {
-    width: 62.56px;
-    height: 16.02px;
+ 
+    width: 72.56px;
+    height: 26.02px;
 }
 
 .gpt3__navbar-links_container {
