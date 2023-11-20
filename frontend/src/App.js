@@ -1,22 +1,15 @@
-import React from 'react'
-
-import {Footer, Blog, Possibility, Features, WhatGPT3, Header} from './containers'
-import {Cta, Brand, Navbar} from './components'
-import './App.css'
+import { Container } from 'react-bootstrap'
+import { Outlet } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
     <div className='App'>
-      <div className='gradient__bg'>
-        <Navbar/>
-        <Header/>
-      </div>
-      <Brand/>
-      <WhatGPT3/>
-      <Features/>
-      <Possibility/>
-      <Cta/>
-      <Blog/>
+      <Header/>
+      <Container>
+          <Outlet />
+      </Container>
       <Footer/>
     </div>
   )
