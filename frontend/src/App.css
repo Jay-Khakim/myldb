@@ -6,7 +6,7 @@
     /* outline: 1px solid red; */
 }
 
-body{
+.background{
     background: var(--color-bg);
 }
 

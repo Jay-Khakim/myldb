@@ -14,13 +14,16 @@ import reportWebVitals from './reportWebVitals';
 import App from './App'
 import App3 from './App3'
 import MainScreen from './screens/MainScreen';
+import LandingPageScreen from './screens/LandingPageScreen';
 import './index.css'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<App />}>
-        <Route path="/main" element={<MainScreen />} />
+      <Route >
+        <Route index={true} path="/" element={<LandingPageScreen />} />
+        <Route path="/main" element={<App />} />
       </Route>
+     
 
   ));
   
