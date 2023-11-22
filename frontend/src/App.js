@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div className='App'>
+    <div className='App vh-100'>
       <Header/>
       <Container>
           <Outlet />
