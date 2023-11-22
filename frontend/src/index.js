@@ -16,6 +16,7 @@ import App3 from './App3'
 import MainScreen from './screens/MainScreen';
 import LandingPageScreen from './screens/LandingPageScreen';
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 import './index.css'
 
 const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
         <Route index={true} path="/" element={<LandingPageScreen />} />
         <Route path='' element={<App/>}>
           <Route path="/login" element={<LoginScreen />} />
+          <Route path="/register" element={<RegisterScreen />} />
         </Route>
         
       </Route>
