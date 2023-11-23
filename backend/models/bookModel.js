@@ -9,13 +9,19 @@ const bookSchema = new mongoose.Schema({
 
     bookId:{
         type: String,
-        required: true,
         unique: true
+    },
+
+    library: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Library'
     },
 
     title: {
         type: String,
-        required: true,
+        default: null,
+
     },
 
     subTitle: {
@@ -41,23 +47,26 @@ const bookSchema = new mongoose.Schema({
 
     pages: {
         type: Number, 
-        required: true,
+        default: null,
+
     },
 
-    published: {
+    publisher: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'Publisher'
+        ref: 'Publisher',
+        default: ""
     },
 
     publicationYear: {
         type: Number,
-        required: true,
+        default: null,
+
     },
 
     edition: {
-        type: Number, 
-        required: true,
+        type: String, 
+        default: null,
+
     },
 
     language: {

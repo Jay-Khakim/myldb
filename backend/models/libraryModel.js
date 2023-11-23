@@ -8,12 +8,6 @@ const librarySchema = new mongoose.Schema({
         ref: 'User'
     },
 
-    book: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'Book'
-    },
-
     libraryName: {
         type: String,
         required: true

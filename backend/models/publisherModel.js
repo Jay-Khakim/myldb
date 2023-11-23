@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const publisherSchema = new mongoose.Schema({
     publisherName: {
         type: String,
-        required: true,
+        default: '',
     },
     location: {
         type: String,

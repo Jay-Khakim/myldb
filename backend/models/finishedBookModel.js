@@ -10,14 +10,15 @@ const finishedBookSchema = new mongoose.Schema({
 
     book: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        default: "",
         ref: 'Book'
     },
 
-    typeOfBook: [{
-        type: String,
-        required: true
-    }],
+    format: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'FormatOfBook'
+    },
 
     finishedBookName: {
         type: String,

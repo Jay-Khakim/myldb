@@ -9,7 +9,7 @@ const quoteSchema = new mongoose.Schema({
 
     book: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        default: null,
         ref: 'Book'
     },
 
@@ -18,7 +18,7 @@ const quoteSchema = new mongoose.Schema({
         required: true
     },
 
-    aouthorOfQoute: {
+    authorOfQoute: {
         type: String,
         required: true, 
         default: "Unknown"
