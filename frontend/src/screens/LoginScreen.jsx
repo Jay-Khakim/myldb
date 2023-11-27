@@ -21,11 +21,25 @@ const LoginScreen = () => {
 
   const {search} = useLocation();
   const sp = new URLSearchParams(search);
-  const redirect = sp.get('redirect') || '/';
+  const redirect = sp.get('redirect') || '/main';
 
-  const submitHandler = (e)=>{
-    
-    console.log("hello")
+  useEffect(()=>{
+    if(userInfo){
+        navigate(redirect);  
+    }
+}, [userInfo, redirect, navigate])
+
+  const submitHandler = async(e)=>{
+    e.preventDefault();
+    try {
+        const res = await login({email, password}).unwrap();
+        distpatch(setCredentials({...res, }))
+        navigate(redirect)
+        console.log("Hello therer")
+
+    } catch (err) {
+        toast.error(err?.data?.message || err.error)
+    }
   }
   return (
     <FormContainer > 
@@ -53,11 +67,11 @@ const LoginScreen = () => {
                 </Form.Group>
 
 
-                <Button type='submit' variant='primary' className="mt-2" >
+                <Button type='submit' variant='primary' className="mt-2" disabled={ isLoading}>
                     Sign In
                 </Button>
 
-                {/* {isLoading && <Loader />} */}
+                {isLoading && <Loader />}
             </Form>
 
             <Row className='py-3'>

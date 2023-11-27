@@ -11,10 +11,9 @@ import store from './store'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/styles/bootstrap.custom.css'
 import './assets/styles/index.css';
-
 import reportWebVitals from './reportWebVitals';
 import App from './App'
-// import App3 from './App3'
+import PrivateRoute from './components/PrivateRoute';
 import MainScreen from './screens/MainScreen';
 import LandingPageScreen from './screens/LandingPageScreen';
 import LoginScreen from './screens/LoginScreen';
@@ -29,8 +28,12 @@ const router = createBrowserRouter(
         <Route path='' element={<App/>}>
           <Route path="/login" element={<LoginScreen />} />
           <Route path="/register" element={<RegisterScreen />} />
-          <Route path="/main" element={<MainScreen />} />
-          <Route path="/main/book/:id" element={<BookScreen />} />
+
+          <Route path='' element={<PrivateRoute/>}>
+            <Route path="/main" element={<MainScreen />} />
+            <Route path="/main/book/:id" element={<BookScreen />} />
+          </Route>
+
         </Route>
       </Route>
      
