@@ -8,7 +8,7 @@ const BookScreen = () => {
     const {data: book, isLoading, error} = useGetBookDetailsQuery(bookId);
   return (
     <>
-        <Link className="btn btn-light my-3" to="/">Go back</Link>
+        <Link className="btn btn-light my-3" to="/main">Go back</Link>
 
         { isLoading ? (
             <h2>Loading...</h2>

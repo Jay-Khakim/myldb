@@ -8,8 +8,8 @@ const languageSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 
-const Language = mongoose.model("Language", languageSchema);
+const language = mongoose.model("Language", languageSchema);
 
-export default Language;
+export default language;
 
 

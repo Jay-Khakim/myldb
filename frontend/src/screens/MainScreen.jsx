@@ -4,13 +4,25 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import {Row, Col, Table, Button} from 'react-bootstrap'
 import { LinkContainer } from "react-router-bootstrap"
+import {FaTimes, FaTrash, FaEdit, FaCheck} from 'react-icons/fa';
+import {toast} from "react-toastify"
+
 
 
 const MainScreen = () => {
   const {data: books, isLoading, error} = useGetBooksQuery()
-
-
-  console.log(books)
+  const deleteHandler = async (id)=>{
+    if(window.confirm('Are you sure that you want to delete a book?')){
+        try {
+          //  await deleteUser(id);
+          //  refetch()
+          //  toast.success("User deleted successfully")
+        } catch (err) {
+            toast.error(err?.data?.message || err.error)
+        }
+    }
+  }
+  
   return (
      <>
       {isLoading ? (
@@ -22,7 +34,8 @@ const MainScreen = () => {
         </Message>
       ):(
         <>
-          <h1>Books DB</h1>
+          <h1>Books of Khakimjonovs Liblary</h1>
+          <h3>Number of books - {books.length}</h3>
           <Row>
             {books.map((book)=>(
                 <Table striped hover responsice className="table-sm">
@@ -42,17 +55,24 @@ const MainScreen = () => {
                     <tr key={book._id}>
                       <td>{book.bookId}</td>
                       <td>{book.title}</td>
-                      <td>{book.language && book.language}</td>
-                      <td>{book.genre}</td> 
-                      
-                      <td>{book.byWhom } </td>
-        
-                      <td>{book.price } 
-                      </td>
+                      <td>{book.language.language}</td>
+                      <td>{book.genre[0].genre}</td> 
+                      <td>{book.byWhom.byWhom}</td>
+                      <td>{book.price}</td>
         
                       <td>
-                        <LinkContainer to={`/books/${book._id}`}>
+                        <LinkContainer to={`/main/book/${book._id}`}>
                           <Button variant="light" className="btn-sm">Details</Button>
+                        </LinkContainer>
+                        <LinkContainer to={`/main/book/${book._id}`}>
+                          <Button variant="light" className="btn-sm mx-1" onClick={()=>deleteHandler(book._id)}>
+                            <FaEdit />
+                          </Button>
+                        </LinkContainer>
+                        <LinkContainer to={`/main/book/${book._id}`}>
+                          <Button variant="danger" className="btn-sm mx-1" onClick={()=>deleteHandler(book._id)}>
+                            <FaTrash  style={{color: "white"}}/>
+                          </Button>
                         </LinkContainer>
                       </td>
                     </tr>

@@ -1,11 +1,19 @@
 import asyncHandler from '../middleware/asyncHandler.js'
 import Book from '../models/bookModel.js';
-
+import language from '../models/languageModel.js';
+import FormatOfBook from '../models/formatOfBookModel.js';
+import ByWhom from '../models/byWhomModel.js';
+import genre from '../models/genreModel.js';
 //@desc     Fetch all books
 //@route    GET / api/books
 // @access  Public
 const getBooks = asyncHandler(async (req, res) =>{
-    const books = await Book.find({});
+    const books = await Book.find({})
+        .populate('user', 'firstName')
+        .populate('genre', 'genre', genre)
+        .populate('language', 'language', language)
+        .populate('format', 'formatOfBook', FormatOfBook)
+        .populate('byWhom', 'byWhom', ByWhom)
     res.json(books)
 })
 
