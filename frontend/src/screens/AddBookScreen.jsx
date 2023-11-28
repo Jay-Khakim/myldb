@@ -7,9 +7,10 @@ import Message from "../components/Message"
 import FormContainer from "../components/FormContainer"
 import {toast} from 'react-toastify'
 import { useAddBookMutation, useUploadBookImageMutation } from "../slices/booksApiSlice"
+import { useGetAuthorsQuery } from "../slices/authorApiSlice"
 
 
-const CreateBookScreen = () => {
+const AddBookScreen = () => {
 
     const {userInfo} = useSelector((state)=> state.auth)
     // const {id: userId} = useParams()
@@ -35,6 +36,8 @@ const CreateBookScreen = () => {
 
     const [uploadBookImage, {isLoading: loadingUpload} ] = useUploadBookImageMutation()
 
+    const {data: authors, isLoading: loadingAuthors } = useGetAuthorsQuery()
+    console.log(authors)
     const navigate = useNavigate()
 
     const submitHandler = async(e) =>{
@@ -264,4 +267,4 @@ const CreateBookScreen = () => {
   </>
 }
 
-export default CreateBookScreen
+export default AddBookScreen

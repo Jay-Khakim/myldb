@@ -9,6 +9,7 @@ import bookRoutes from "./routes/bookRoutes.js"
 import userRoutes from './routes/userRoutes.js';
 import quoteRoutes from './routes/quoteRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
+import authorRoutes from './routes/authorRoutes.js';
 import cors from 'cors' 
 // const cors = require('cors');
 const port = process.env.PORT || 5000;
@@ -29,6 +30,7 @@ app.use('/api/books', bookRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/quotes', quoteRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/authors', authorRoutes);
 
 const __dirname = path.resolve(); //Set __dirname to current directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
