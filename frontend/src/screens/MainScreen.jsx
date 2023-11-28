@@ -37,7 +37,17 @@ const MainScreen = () => {
         <>
         <QuoteCarousel/>
           <h1>Books of Khakimjonovs Liblary</h1>
-          <h3>Number of books - {books.length}</h3>
+          <Row className='align-items-center'>
+            <Col>
+              <h3>Number of books - {books.length}</h3>
+            </Col>
+            <Col xs="auto">
+              <LinkContainer to={"/main/book/create"}>
+                <Button variant="primary">Add a New Book</Button>
+              </LinkContainer>
+            </Col>
+          </Row>
+          
           <Row>
             {books.map((book)=>(
                 <Table striped hover responsice className="table-sm">

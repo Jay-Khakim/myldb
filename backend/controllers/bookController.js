@@ -32,5 +32,45 @@ const getBookById = asyncHandler(async (req, res) =>{
         }
 })
 
+const addBook = asyncHandler(async (req, res) =>{
+    const {user, bookId, liblary, title, subTitle, author, coverImage, isbn, pages,  publisher, publicationYear, edition, language, format, genre, currentLocation,byWhom, price, quote} = req.body;
 
-export {getBooks, getBookById}
+    const bookExists = await Book.findOne({bookId});
+
+    if(bookExists){
+        res.status(400);
+        throw new Error(`Book with id= ${bookId} is already exists`)
+    }
+
+    const book = await Book.create({
+        user, bookId, liblary, title, subTitle, author, coverImage, isbn, pages,  publisher, publicationYear, edition, language, format, genre, currentLocation,byWhom, price, quote
+    })
+
+    if(book){
+
+        res.status(201).json("Book added successfully")
+    }else{
+        res.status(400);
+        throw new Error("Invalid book data")
+    }
+
+    // const book = new Book({
+    //     name: 'Sample name',
+    //     price: 0,
+    //     user: req.user.id,
+    //     image: '/images/sample.jpg',
+    //     brand: 'Sample brand',
+    //     category: 'Sample category',
+    //     countInStock: 0,
+    //     numReviews: 0,
+    //     description: 'Sample description',
+    // })
+
+    // const addedBook = await book.save()
+    // res.status(201).json(addedBook)
+})
+
+
+
+
+export {getBooks, getBookById, addBook}

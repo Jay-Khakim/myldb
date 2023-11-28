@@ -31,13 +31,18 @@ const Header = () => {
         <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
             <Container>
                 <Navbar.Brand href="/">MyLDB</Navbar.Brand>
-                <Navbar.Toggle aria-controls='basic-navbar-nav'/>
-                <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
+                <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className='ms-auto'>
-                        
+                    
                         {userInfo ? (
+                            
                             <>
+                            <Nav.Link href="/main/borrowings">Borrowings</Nav.Link>
+                            <Nav.Link href="/main/lendings">Lendings</Nav.Link>
+                            <Nav.Link href="/main/finished">Finished</Nav.Link>
                             {/* <SearchBox/> */}
+                            <FaUser />
                             <NavDropdown title={userInfo.username} id='username'>
                                 
                                 <LinkContainer to='/profile'>

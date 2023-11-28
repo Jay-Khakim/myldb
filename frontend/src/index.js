@@ -20,7 +20,7 @@ import LandingPageScreen from './screens/LandingPageScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import BookScreen from './screens/BookScreen';
-
+import CreateBookScreen from './screens/CreateBookScreen';
 import './index.css'
 
 const router = createBrowserRouter(
@@ -34,6 +34,7 @@ const router = createBrowserRouter(
           <Route path='' element={<PrivateRoute/>}>
             <Route path="/main" element={<MainScreen />} />
             <Route path="/main/book/:id" element={<BookScreen />} />
+            <Route path="/main/book/create" element={<CreateBookScreen />} />
           </Route>
           {/* <Route path="*" render={() => <Navigate to="/main" />} /> */}
         </Route>
