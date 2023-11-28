@@ -45,13 +45,14 @@ const importData = async()=>{
 
 
 
-        const sampleBooks = books.map((book)=>{
-            return {...book, user: adminUser, quote: quoteName  };
-        })
+        // const sampleBooks = books.map((book)=>{
+        //     return {...book, user: adminUser, quote: quoteName  };
+        // })
         console.log("Sample books created successfully")
 
         
-        const createBook = await Book.insertMany(sampleBooks);
+        // const createBook = await Book.insertMany(sampleBooks);
+        const createBook = await Book.insertMany(books);
         console.log("Books created successfully")
         
         

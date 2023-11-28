@@ -50,7 +50,7 @@ const MainScreen = () => {
           
           <Row>
            
-                <Table striped hover responsice className="table-sm">
+                <Table striped hover responsive className="table-sm">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -91,7 +91,7 @@ const MainScreen = () => {
                   ))}
                 </tbody>
               </Table>
-            ))
+
           </Row>
         </>
       )}

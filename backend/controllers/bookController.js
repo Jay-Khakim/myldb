@@ -9,7 +9,7 @@ import genre from '../models/genreModel.js';
 // @access  Public
 const getBooks = asyncHandler(async (req, res) =>{
     const books = await Book.find({})
-        .populate('user', 'firstName')
+        // .populate('user', 'firstName')
         // .populate('genre', 'genre', genre)
         // .populate('language', 'language', language)
         // .populate('format', 'formatOfBook', FormatOfBook)
@@ -33,7 +33,7 @@ const getBookById = asyncHandler(async (req, res) =>{
 })
 
 const addBook = asyncHandler(async (req, res) =>{
-    const {user, bookId, liblary, title, subTitle, author, coverImage, isbn, pages,  publisher, publicationYear, edition, language, format, genre, currentLocation,byWhom, price, quote} = req.body;
+    const { bookId, liblary, title, subTitle, author, coverImage, isbn, pages,  publisher, publicationYear, edition, language, format, genre, currentLocation, byWhom, price } = req.body;
 
     const bookExists = await Book.findOne({bookId});
 
@@ -43,7 +43,7 @@ const addBook = asyncHandler(async (req, res) =>{
     }
 
     const book = await Book.create({
-        user, bookId, liblary, title, subTitle, author, coverImage, isbn, pages,  publisher, publicationYear, edition, language, format, genre, currentLocation,byWhom, price, quote
+         bookId, liblary, title, subTitle, author, coverImage, isbn, pages,  publisher, publicationYear, edition, language, format, genre, currentLocation, byWhom, price 
     })
 
     if(book){

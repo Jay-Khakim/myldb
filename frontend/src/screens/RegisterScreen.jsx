@@ -51,7 +51,7 @@ const RegisterScreen = () => {
                 toast.error(err?.data?.message || err.error)
             }
         }
-        console.log("hello")
+        // console.log("hello")
         
     }
 

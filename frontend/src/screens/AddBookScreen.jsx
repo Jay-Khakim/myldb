@@ -1,13 +1,13 @@
 import {useState, useEffect} from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import {Form, Button, Col, Row} from "react-bootstrap"
 import Loader from "../components/Loader"
 import Message from "../components/Message"
 import FormContainer from "../components/FormContainer"
+import { setCredentials } from "../slices/authSlice"
 import {toast} from 'react-toastify'
 import { useAddBookMutation, useUploadBookImageMutation } from "../slices/booksApiSlice"
-import { useGetAuthorsQuery } from "../slices/authorApiSlice"
 
 
 const AddBookScreen = () => {
@@ -30,19 +30,42 @@ const AddBookScreen = () => {
     const [currentLocation, setCurrentLocation] = useState('')
     const [byWhom, setByWhom] = useState('')
     const [price, setPrice] = useState('')
-    // const [quote, setQuote] = useState('')
 
     const [addBook, {isLoading: loadingAdd}, error] = useAddBookMutation()
 
     const [uploadBookImage, {isLoading: loadingUpload} ] = useUploadBookImageMutation()
 
-    const {data: authors, isLoading: loadingAuthors } = useGetAuthorsQuery()
-    console.log(authors)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const user = userInfo._id
 
     const submitHandler = async(e) =>{
         e.preventDefault()
-        console.log("Added")
+        try {
+            const res = await addBook({
+                bookId,
+                title,
+                subTitle,
+                author,
+                coverImage,
+                isbn,
+                pages,
+                publisher,
+                publicationYear,
+                edition,
+                language,
+                format,
+                genre,
+                currentLocation,
+                byWhom,
+                price
+            }).unwrap(); // NOTE: here we need to unwrap the Promise to catch any rejection in our catch block
+            toast.success('Book Added Successfully');
+            navigate('/main');
+          } catch (err) {
+            toast.error(err?.data?.message || err.error);
+          }
     }
 
     const uploadFileHandler = async (e) => {
@@ -168,7 +191,7 @@ const AddBookScreen = () => {
                 <Form.Group as={Col} controlId="publicationYear" className="my-2">
                     <Form.Label>PublicationYear</Form.Label>
                     <Form.Control 
-                        type="text"
+                        type="number"
                         placeholder="Enter publicationYear"
                         value={publicationYear}
                         onChange={(e) => setPublicationYear(e.target.value)}>
@@ -223,7 +246,7 @@ const AddBookScreen = () => {
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="currentLocation" className="my-2">
-                    <Form.Label>CurrentLocation</Form.Label>
+                    <Form.Label>Current Location</Form.Label>
                     <Form.Control 
                         type="text"
                         placeholder="Enter currentLocation"
@@ -236,7 +259,7 @@ const AddBookScreen = () => {
 
             <Row>
                 <Form.Group as={Col}  controlId="byWhom" className="my-2">
-                    <Form.Label>ByWhom</Form.Label>
+                    <Form.Label>By Whom</Form.Label>
                     <Form.Control 
                         type="text"
                         placeholder="Enter byWhom"
@@ -249,7 +272,7 @@ const AddBookScreen = () => {
                 <Form.Group as={Col}  controlId="price" className="my-2">
                     <Form.Label>Price</Form.Label>
                     <Form.Control 
-                        type="text"
+                        type="number"
                         placeholder="Enter price"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}>

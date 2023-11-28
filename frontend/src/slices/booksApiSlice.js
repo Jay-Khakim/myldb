@@ -16,9 +16,10 @@ export const booksApiSlice = apiSlice.injectEndpoints({
             keepUnusedDataFor: 5
         }),
         addBook: builder.mutation({
-            query: ()=>({
+            query: (data)=>({
                 url: BOOKS_URL,
-                method: 'POST'
+                method: 'POST',
+                body: data
             }),
             invalidatesTags: ['Book']
         }),

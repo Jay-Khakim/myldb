@@ -107,7 +107,6 @@ const bookSchema = new mongoose.Schema({
 
     quote: [{
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
         ref: 'Quote',
     }]
 
