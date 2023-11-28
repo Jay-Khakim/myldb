@@ -12,6 +12,12 @@ const bookSchema = new mongoose.Schema({
         unique: true
     },
 
+    library: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Library'
+    },
+
     title: {
         type: String,
         default: null,
@@ -24,8 +30,9 @@ const bookSchema = new mongoose.Schema({
     },
 
     author: {
-        type: String,
-        default: ''
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Author'
     },
 
     coverImage:{
@@ -45,8 +52,9 @@ const bookSchema = new mongoose.Schema({
     },
 
     publisher: {
-        type: String,
-        default: ''
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Publisher',
+        default: ""
     },
 
     publicationYear: {
@@ -62,28 +70,33 @@ const bookSchema = new mongoose.Schema({
     },
 
     language: {
-        type: String,
-        default: ''
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Language'
     },
 
     format: {
-        type: String,
-        default: ''
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'FormatOfBook'
     },
 
     genre: [{
-        type: String,
-        default: ''
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Genre'
     }],
 
     currentLocation: {
-        type: String,
-        default: ''
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'LocationOfBook',
     },
 
     byWhom: {
-        type: String,
-        default: ''
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'ByWhom',
     },
 
     price: {

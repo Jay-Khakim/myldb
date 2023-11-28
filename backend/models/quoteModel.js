@@ -8,9 +8,8 @@ const quoteSchema = new mongoose.Schema({
     },
 
     book: {
-        type: mongoose.Schema.Types.ObjectId,
-        default: null,
-        ref: 'Book'
+        type: String,
+        required: true
     },
 
     quote: {

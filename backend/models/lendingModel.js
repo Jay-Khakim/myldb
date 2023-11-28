@@ -12,9 +12,11 @@ const lendingSchema = new mongoose.Schema({
     },
 
     bookId: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'Book'
+        // type: mongoose.Schema.Types.ObjectId,
+        // required: true,
+        // ref: 'Book'
+        type: String,
+        required: true
     },
 
     whoTook: {

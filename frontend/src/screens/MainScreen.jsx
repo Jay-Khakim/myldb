@@ -49,7 +49,7 @@ const MainScreen = () => {
           </Row>
           
           <Row>
-            {books.map((book)=>(
+           
                 <Table striped hover responsice className="table-sm">
                 <thead>
                   <tr>
@@ -67,9 +67,9 @@ const MainScreen = () => {
                     <tr key={book._id}>
                       <td>{book.bookId}</td>
                       <td>{book.title}</td>
-                      <td>{book.language.language}</td>
-                      <td>{book.genre[0].genre}</td> 
-                      <td>{book.byWhom.byWhom}</td>
+                      <td>{book.language}</td>
+                      <td>{book.genre}</td> 
+                      <td>{book.byWhom}</td>
                       <td>{book.price}</td>
         
                       <td>
@@ -91,7 +91,7 @@ const MainScreen = () => {
                   ))}
                 </tbody>
               </Table>
-            ))}
+            ))
           </Row>
         </>
       )}

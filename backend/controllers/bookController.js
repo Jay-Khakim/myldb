@@ -10,10 +10,10 @@ import genre from '../models/genreModel.js';
 const getBooks = asyncHandler(async (req, res) =>{
     const books = await Book.find({})
         .populate('user', 'firstName')
-        .populate('genre', 'genre', genre)
-        .populate('language', 'language', language)
-        .populate('format', 'formatOfBook', FormatOfBook)
-        .populate('byWhom', 'byWhom', ByWhom)
+        // .populate('genre', 'genre', genre)
+        // .populate('language', 'language', language)
+        // .populate('format', 'formatOfBook', FormatOfBook)
+        // .populate('byWhom', 'byWhom', ByWhom)
     res.json(books)
 })
 

@@ -9,15 +9,13 @@ const finishedBookSchema = new mongoose.Schema({
     },
 
     book: {
-        type: mongoose.Schema.Types.ObjectId,
-        default: "",
-        ref: 'Book'
+        type: String,
+        default: 0,
     },
 
     format: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'FormatOfBook'
+        type: String,
+        default: 0,
     },
 
     finishedBookName: {
