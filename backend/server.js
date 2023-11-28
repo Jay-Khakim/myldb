@@ -6,6 +6,7 @@ import connectDB from './config/db.js';
 import {notFound, errorHandler} from './middleware/errorMiddleware.js';
 import bookRoutes from "./routes/bookRoutes.js"
 import userRoutes from './routes/userRoutes.js';
+import quoteRoutes from './routes/quoteRoutes.js';
 import cors from 'cors' 
 // const cors = require('cors');
 const port = process.env.PORT || 5000;
@@ -28,6 +29,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/books', bookRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/quotes', quoteRoutes);
 
 app.use(notFound)
 app.use(errorHandler)

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useGetBooksQuery } from '../slices/booksApiSlice'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
+import QuoteCarousel from '../components/QuoteCarousel'
 import {Row, Col, Table, Button} from 'react-bootstrap'
 import { LinkContainer } from "react-router-bootstrap"
 import {FaTimes, FaTrash, FaEdit, FaCheck} from 'react-icons/fa';
@@ -34,6 +35,7 @@ const MainScreen = () => {
         </Message>
       ):(
         <>
+        <QuoteCarousel/>
           <h1>Books of Khakimjonovs Liblary</h1>
           <h3>Number of books - {books.length}</h3>
           <Row>
