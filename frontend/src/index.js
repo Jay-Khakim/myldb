@@ -4,7 +4,8 @@ import {
     createBrowserRouter,
     createRoutesFromElements,
     Route,
-    RouterProvider
+    RouterProvider,
+    Navigate,
    } from 'react-router-dom';
 import {Provider} from 'react-redux'
 import store from './store'
@@ -19,6 +20,7 @@ import LandingPageScreen from './screens/LandingPageScreen';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import BookScreen from './screens/BookScreen';
+
 import './index.css'
 
 const router = createBrowserRouter(
@@ -33,9 +35,10 @@ const router = createBrowserRouter(
             <Route path="/main" element={<MainScreen />} />
             <Route path="/main/book/:id" element={<BookScreen />} />
           </Route>
-
+          {/* <Route path="*" render={() => <Navigate to="/main" />} /> */}
         </Route>
       </Route>
+    
      
 
   ));

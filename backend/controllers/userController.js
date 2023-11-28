@@ -16,9 +16,10 @@ const authUser = asyncHandler(async(req, res)=>{
 
         res.status(200).json({
             _id: user._id,
-            name: user.username,
+            username: user.username,
             email: user.email,
-            isAdmin: user.isAdmin
+            phoneNumber: user.phoneNumber,
+            idAdmin: user.isAdmin
         })
     }else{
         res.status(401);
@@ -31,7 +32,7 @@ const authUser = asyncHandler(async(req, res)=>{
 // @access   Public
 
 const registerUser = asyncHandler(async(req, res)=>{
-    const {username, email, phoneNumber, password} = req.body;
+    const {firstName, lastName, username, email, phoneNumber, gender, password} = req.body;
 
     const userExists = await User.findOne({email});
 
@@ -41,10 +42,7 @@ const registerUser = asyncHandler(async(req, res)=>{
     }
 
     const user = await User.create({
-        username,
-        email,
-        phoneNumber, 
-        password
+        firstName, lastName, username, email, phoneNumber, gender, password
     })
 
     if(user){
