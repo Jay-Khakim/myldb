@@ -70,7 +70,22 @@ const addBook = asyncHandler(async (req, res) =>{
     // res.status(201).json(addedBook)
 })
 
+//@desc     Delete a book
+//@route    DELETE /api/books/:id
+// @access  Private
+const deleteBook = asyncHandler(async (req, res) =>{
+
+    const book = await Book.findById(req.params.id);
+    if(book){
+        await Book.deleteOne({_id: book._id})
+        res.status(200).json({message: 'Book deleted successfully'})
+    }else{
+        res.status(404)
+        throw new Error('Resource not found')
+    }
+})
 
 
 
-export {getBooks, getBookById, addBook}
+
+export {getBooks, getBookById, addBook, deleteBook}

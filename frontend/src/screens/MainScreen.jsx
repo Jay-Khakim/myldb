@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useGetBooksQuery } from '../slices/booksApiSlice'
+import { useNavigate } from 'react-router-dom'
+import { useGetBooksQuery, useDeleteBookMutation } from '../slices/booksApiSlice'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import QuoteCarousel from '../components/QuoteCarousel'
@@ -11,13 +12,21 @@ import {toast} from "react-toastify"
 
 
 const MainScreen = () => {
-  const {data: books, isLoading, error} = useGetBooksQuery()
+  const {data: books, isLoading, error, refetch} = useGetBooksQuery()
+
+  const [deleteBook, {isLoading: loadingDelete}] = useDeleteBookMutation()
+
+  const navigate = useNavigate()
+
+  const editHandler = async ()=>{
+    console.log("Edited")
+  }
   const deleteHandler = async (id)=>{
     if(window.confirm('Are you sure that you want to delete a book?')){
         try {
-          //  await deleteUser(id);
-          //  refetch()
-          //  toast.success("User deleted successfully")
+           await deleteBook(id);
+           refetch()
+          //  toast.success("Book deleted successfully")
         } catch (err) {
             toast.error(err?.data?.message || err.error)
         }
@@ -77,15 +86,13 @@ const MainScreen = () => {
                           <Button variant="light" className="btn-sm">Details</Button>
                         </LinkContainer>
                         <LinkContainer to={`/main/book/${book._id}`}>
-                          <Button variant="light" className="btn-sm mx-1" onClick={()=>deleteHandler(book._id)}>
+                          <Button variant="light" className="btn-sm mx-1" onClick={()=>editHandler(book._id)}>
                             <FaEdit />
                           </Button>
                         </LinkContainer>
-                        <LinkContainer to={`/main/book/${book._id}`}>
-                          <Button variant="danger" className="btn-sm mx-1" onClick={()=>deleteHandler(book._id)}>
-                            <FaTrash  style={{color: "white"}}/>
-                          </Button>
-                        </LinkContainer>
+                        <Button variant="danger" className="btn-sm mx-1" onClick={()=>deleteHandler(book._id)}>
+                          <FaTrash  style={{color: "white"}}/>
+                        </Button>
                       </td>
                     </tr>
                   ))}
