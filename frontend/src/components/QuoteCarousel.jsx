@@ -27,9 +27,9 @@ const QuoteCarousel = () => {
   return isLoading ? null : error ? (
     <Message variant="danger"> {error?.data?.message} || error.error</Message>
   ):(
-    <Carousel pause='hover' className='bg-light my-4 py-2 text-center'>
+    <Carousel slide={false} pause='hover' data-bs-theme="dark" indicators={false} className='bg-light my-4 py-2 text-center'>
       {quotes.map((quote) => (
-        <Carousel.Item className='mx-auto ' key={quote._id}>
+        <Carousel.Item className='mx-auto ' key={quote._id} interval={5000}>
           <strong ><p> "{quote.quote}"</p></strong>
           <p>- <strong>{quote.book !== null ? quote.book : "Uknown"}</strong> , {quote.authorOfQoute !== null ? quote.authorOfQoute : "Uknown"}</p>
         </Carousel.Item>
