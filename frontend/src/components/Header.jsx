@@ -38,6 +38,7 @@ const Header = () => {
                         {userInfo ? (
                             
                             <>
+                            <Nav.Link href="/main/quotes">Quotes</Nav.Link>
                             <Nav.Link href="/main/borrowings">Borrowings</Nav.Link>
                             <Nav.Link href="/main/lendings">Lendings</Nav.Link>
                             <Nav.Link href="/main/finished">Finished</Nav.Link>

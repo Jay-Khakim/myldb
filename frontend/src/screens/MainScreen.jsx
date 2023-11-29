@@ -45,10 +45,10 @@ const MainScreen = () => {
       ):(
         <>
         <QuoteCarousel/>
-          <h1>Books of Khakimjonovs Liblary</h1>
+          {/* <h1>Books of Khakimjonovs Liblary</h1> */}
           <Row className='align-items-center'>
             <Col>
-              <h3>Number of books - {books.length}</h3>
+              <h3>Number of books - <strong>{books.length}</strong></h3>
             </Col>
             <Col xs="auto">
               <LinkContainer to={"/main/book/create"}>

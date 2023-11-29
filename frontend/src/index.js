@@ -23,6 +23,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import BookScreen from './screens/BookScreen';
 import AddBookScreen from './screens/AddBookScreen';
 import UpdateBookScreen from './screens/UpdateBookScreen';
+import QuotesScreen from "./screens/QuotesScreen";
 import './index.css'
 
 const router = createBrowserRouter(
@@ -38,6 +39,7 @@ const router = createBrowserRouter(
             <Route path="/main/book/:id" element={<BookScreen />} />
             <Route path="/main/book/:id/update" element={<UpdateBookScreen />} />
             <Route path="/main/book/create" element={<AddBookScreen />} />
+            <Route path="/main/quotes" element={<QuotesScreen />} />
           </Route>
           {/* <Route path="*" render={() => <Navigate to="/main" />} /> */}
         </Route>

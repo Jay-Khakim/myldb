@@ -32,6 +32,10 @@ const getBookById = asyncHandler(async (req, res) =>{
         }
 })
 
+
+//@desc     Add a book
+//@route    GET / api/books/
+//@access   Private
 const addBook = asyncHandler(async (req, res) =>{
     const { bookId, liblary, title, subTitle, author, coverImage, isbn, pages,  publisher, publicationYear, edition, language, format, genre, currentLocation, byWhom, price } = req.body;
 

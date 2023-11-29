@@ -9,9 +9,17 @@ export const quotesApiSlice = apiSlice.injectEndpoints({
             }),
             keepUnusedDataFor: 5
         }),
+        addQuote: builder.mutation({
+            query: (data)=>({
+                url: QUOTES_URL,
+                method: 'POST',
+                body: data,
+
+            }),
+        }),
 
     })
 })
 
 
-export const {useGetQuotesQuery,} = quotesApiSlice;
+export const {useGetQuotesQuery, useAddQuoteMutation} = quotesApiSlice;
