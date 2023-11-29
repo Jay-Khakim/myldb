@@ -26,7 +26,7 @@ const MainScreen = () => {
         try {
            await deleteBook(id);
            refetch()
-          //  toast.success("Book deleted successfully")
+           toast.success("Book deleted successfully")
         } catch (err) {
             toast.error(err?.data?.message || err.error)
         }

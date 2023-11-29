@@ -30,7 +30,7 @@ const Header = () => {
     <header>
         <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
             <Container>
-                <Navbar.Brand href="/">MyLDB</Navbar.Brand>
+                <Navbar.Brand href="/main">MyLDB</Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className='ms-auto'>

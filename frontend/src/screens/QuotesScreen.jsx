@@ -9,7 +9,7 @@ import {Row, Col, Table, Button, Card, Form} from 'react-bootstrap'
 import { LinkContainer } from "react-router-bootstrap"
 import {FaTimes, FaTrash, FaEdit, FaCheck} from 'react-icons/fa';
 import {toast} from "react-toastify"
-import { useGetQuotesQuery, useAddQuoteMutation } from '../slices/quotesApiSlice'
+import { useGetQuotesQuery, useAddQuoteMutation, useDeleteQuoteMutation } from '../slices/quotesApiSlice'
 
 
 const Quotes = () => {
@@ -19,14 +19,24 @@ const Quotes = () => {
 
   const [quoteText, setQuoteText] = useState()
   const [book, setBook] = useState()
-  const [authorOfQuote, setAuthorOfQuote] = useState()
+  const [authorOfQoute, setAuthorOfQoute] = useState()
 
   const {data: quotes, isLoading, refetch, error} = useGetQuotesQuery()
 
   const [addQuote, {isLoading: loadingAddQuote}] = useAddQuoteMutation()
 
-  const deleteHandler = async(e)=>{
-    console.log("deleted")
+  const [deleteQuote, {isLoading: loadingDeleteQuote}] = useDeleteQuoteMutation()
+
+  const deleteHandler = async(id)=>{
+    if(window.confirm('Are you sure that you want to delete a quote?')){
+      try {
+         await deleteQuote(id);
+         refetch()
+         toast.success("Quote deleted")
+      } catch (err) {
+          toast.error(err?.data?.message || err.error)
+      }
+  }
   }
 
   const addQuoteHandler = async(e)=>{
@@ -36,7 +46,7 @@ const Quotes = () => {
         user,
         quoteText,
         book,
-        authorOfQuote
+        authorOfQoute
       }).unwrap()
       refetch()
       toast.success('Quote Added');
@@ -128,13 +138,13 @@ const Quotes = () => {
                     </Form.Control>
                 </Form.Group>
 
-                <Form.Group controlId='authorOfQuote' className='my-3'>
+                <Form.Group controlId='authorOfQoute' className='my-3'>
                     <Form.Label>Author Of Quote</Form.Label>
                     <Form.Control
                         type='text'
                         placeholder='Enter Author Of Quote'
-                        value={authorOfQuote}
-                        onChange={(e) => setAuthorOfQuote(e.target.value)}>
+                        value={authorOfQoute}
+                        onChange={(e) => setAuthorOfQoute(e.target.value)}>
                     </Form.Control>
                 </Form.Group>
 

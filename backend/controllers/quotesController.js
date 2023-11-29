@@ -17,7 +17,7 @@ const getQuotes = asyncHandler(async (req, res) =>{
 //@access   Private
 
 const addQuote = asyncHandler(async (req, res) =>{
-    const {user, quoteText: quote, book, authorOfQuote  } = req.body;
+    const {user, quoteText: quote, book, authorOfQoute  } = req.body;
     
     console.log(quote)
     const quoteExists = await Quote.findOne({quote});
@@ -27,7 +27,7 @@ const addQuote = asyncHandler(async (req, res) =>{
         throw new Error(`Quote with text= ${quote} is already exists`)
     }
 
-    const quoteNew = await Quote.create({user, quote, book, authorOfQuote})
+    const quoteNew = await Quote.create({user, quote, book, authorOfQoute})
 
     if(quoteNew){
 
@@ -38,4 +38,19 @@ const addQuote = asyncHandler(async (req, res) =>{
     }
 })
 
-export {getQuotes, addQuote}
+//@desc     Delete a quote
+//@route    DELETE /api/quotes/:id
+// @access  Private
+const deleteQuote = asyncHandler(async (req, res) =>{
+
+    const quote = await Quote.findById(req.params.id);
+    if(quote){
+        await Quote.deleteOne({_id: quote._id})
+        res.status(200).json({message: 'Quote deleted successfully'})
+    }else{
+        res.status(404)
+        throw new Error('Resource not found')
+    }
+})
+
+export {getQuotes, addQuote, deleteQuote}

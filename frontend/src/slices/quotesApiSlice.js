@@ -17,9 +17,15 @@ export const quotesApiSlice = apiSlice.injectEndpoints({
 
             }),
         }),
+        deleteQuote: builder.mutation({
+            query: (quoteId) =>({
+                url: `${QUOTES_URL}/${quoteId}`,
+                method: 'DELETE',
+            }),
+        }),
 
     })
 })
 
 
-export const {useGetQuotesQuery, useAddQuoteMutation} = quotesApiSlice;
+export const {useGetQuotesQuery, useAddQuoteMutation, useDeleteQuoteMutation} = quotesApiSlice;
