@@ -26,6 +26,7 @@ import UpdateBookScreen from './screens/UpdateBookScreen';
 import QuotesScreen from "./screens/QuotesScreen";
 import BorrowingsScreen from './screens/BorrowingsScreen';
 import LendingsScreen from './screens/LendingsScreen';
+import FinishedBooksScreen from './screens/FinishedBooksScreen';
 import './index.css'
 
 
@@ -45,6 +46,7 @@ const router = createBrowserRouter(
             <Route path="/main/quotes" element={<QuotesScreen />} />
             <Route path="/main/borrowings" element={<BorrowingsScreen />} />
             <Route path="/main/lendings" element={<LendingsScreen />} />
+            <Route path="/main/finishedbooks" element={<FinishedBooksScreen />} />
           </Route>
           {/* <Route path="*" render={() => <Navigate to="/main" />} /> */}
         </Route>

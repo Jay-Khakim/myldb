@@ -12,6 +12,7 @@ import uploadRoutes from './routes/uploadRoutes.js';
 import authorRoutes from './routes/authorRoutes.js';
 import borrowingsRoutes from './routes/borrowingRoutes.js';
 import lendingRoutes from "./routes/lendingRoutes.js"
+import finishedBookRoutes from './routes/finishedBookRoutes.js';
 import cors from 'cors' 
 // const cors = require('cors');
 const port = process.env.PORT || 5000;
@@ -35,6 +36,7 @@ app.use('/api/upload', uploadRoutes);
 app.use('/api/authors', authorRoutes);
 app.use('/api/borrowings', borrowingsRoutes);
 app.use('/api/lendings', lendingRoutes);
+app.use('/api/finishedbooks', finishedBookRoutes);
 
 const __dirname = path.resolve(); //Set __dirname to current directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))

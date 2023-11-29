@@ -41,7 +41,7 @@ const Header = () => {
                             <Nav.Link href="/main/quotes">Quotes</Nav.Link>
                             <Nav.Link href="/main/borrowings">Borrowings</Nav.Link>
                             <Nav.Link href="/main/lendings">Lendings</Nav.Link>
-                            <Nav.Link href="/main/finished">Finished</Nav.Link>
+                            <Nav.Link href="/main/finishedbooks">Finished</Nav.Link>
                             {/* <SearchBox/> */}
                             <FaUser />
                             <NavDropdown title={userInfo.username} id='username'>
