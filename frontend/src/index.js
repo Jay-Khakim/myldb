@@ -25,7 +25,9 @@ import AddBookScreen from './screens/AddBookScreen';
 import UpdateBookScreen from './screens/UpdateBookScreen';
 import QuotesScreen from "./screens/QuotesScreen";
 import BorrowingsScreen from './screens/BorrowingsScreen';
+import LendingsScreen from './screens/LendingsScreen';
 import './index.css'
+
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -42,6 +44,7 @@ const router = createBrowserRouter(
             <Route path="/main/book/create" element={<AddBookScreen />} />
             <Route path="/main/quotes" element={<QuotesScreen />} />
             <Route path="/main/borrowings" element={<BorrowingsScreen />} />
+            <Route path="/main/lendings" element={<LendingsScreen />} />
           </Route>
           {/* <Route path="*" render={() => <Navigate to="/main" />} /> */}
         </Route>
