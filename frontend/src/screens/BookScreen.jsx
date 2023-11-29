@@ -67,7 +67,7 @@ const BookScreen = () => {
                     <ListGroup variant="flush">
                         <ListGroup.Item>
                             <Row>
-                                <LinkContainer to={`/main/book/${book._id}/edit`}>
+                                <LinkContainer to={`/main/book/${book._id}/update`}>
                                 <Button className="btn-block"type="button" ><FaEdit/> Edit Book</Button>
                                 </LinkContainer>
                                 

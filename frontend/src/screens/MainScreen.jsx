@@ -85,8 +85,8 @@ const MainScreen = () => {
                         <LinkContainer to={`/main/book/${book._id}`}>
                           <Button variant="light" className="btn-sm">Details</Button>
                         </LinkContainer>
-                        <LinkContainer to={`/main/book/${book._id}`}>
-                          <Button variant="light" className="btn-sm mx-1" onClick={()=>editHandler(book._id)}>
+                        <LinkContainer to={`/main/book/${book._id}/update`}>
+                          <Button variant="light" className="btn-sm mx-1">
                             <FaEdit />
                           </Button>
                         </LinkContainer>

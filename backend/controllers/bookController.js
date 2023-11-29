@@ -85,7 +85,41 @@ const deleteBook = asyncHandler(async (req, res) =>{
     }
 })
 
+//@desc     Update a book
+//@route    PUT / api/books/:id
+// @access  Private
+const updateBook = asyncHandler(async (req, res) =>{
+    const { bookID, title, subTitle, author, coverImage, isbn, pages,  publisher, publicationYear, edition, language, format, genre, currentLocation, byWhom, price}=req.body;
+    const book = await Book.findById(bookID);
+    
+    if(book){
+        // book.bookId = bookId;
+        book.title = title;
+        book.subTitle = subTitle;
+        book.author = author;
+        book.coverImage = coverImage;
+        book.isbn = isbn;
+        book.pages = pages;
+        book.publisher = publisher;
+        book.publicationYear = publicationYear;
+        book.edition = edition;
+        book.language = language;
+        book.format = format;
+        book.genre = genre;
+        book.currentLocation = currentLocation;
+        book.byWhom = byWhom;
+        book.price = price;
+
+        const updateBook = await book.save();
+        res.json(updateBook);
+
+    }else{
+        res.status(404)
+        throw new Error('Resource not found')
+    }
+})
 
 
 
-export {getBooks, getBookById, addBook, deleteBook}
+
+export {getBooks, getBookById, addBook, deleteBook, updateBook}
