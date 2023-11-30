@@ -22,7 +22,8 @@
 
 ## 1. Main UI
 
-<img width="1264" alt="ui-main" src="https://user-images.githubusercontent.com/81867375/209444747-861ac9cd-1b4a-49c1-8096-a235da2e2061.png">
+![image_2023-11-30_15-10-45](https://github.com/Jay-Khakim/myldb/assets/68965155/379f31b0-c229-4bc8-90aa-15c21a0de313)
+
 
 ---
 
