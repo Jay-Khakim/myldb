@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# MyLDB - Online Library Management System | Mern Stack App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This app can be used for online library management. You can use it for coolecting your book DB, noting quotes from books, managing your book borrowings, lendings. Also it can be useful for keeping up  what kind of books you finished and for setting goals and working with them
 
-## Available Scripts
+1. React with functional components & hooks ✅            
+2. React router ✅          
+3. React-Bootstrap UI library✅
+4. How to structure components✅
+5. Component level state & props✅
+6. Managing global state with Redux (Actions & Reducers)✅
+7. Using Redux state in components (useDispatch & useSelector)✅
+8. Creating an extensive back end with Express✅
+9. Working with a MongoDB database and the Mongoose ODM✅
+10. JWT authentication (JSON web tokens) with HTTP-Only cookie✅
+11. Creating custom authentication middleware✅
+12. Custom error handler✅
+13. Integrating the PayPal API✅
+14. Environment variables✅
+15. Project deployment✅
+16. Much more!✅
 
-In the project directory, you can run:
 
-### `npm start`
+## 1. Main UI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img width="1264" alt="ui-main" src="https://user-images.githubusercontent.com/81867375/209444747-861ac9cd-1b4a-49c1-8096-a235da2e2061.png">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 2. Create
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Create button lets user to create new userData. There is a button to close the *Add User* window.**
 
-### `npm run build`
+<img width="1278" alt="create" src="https://user-images.githubusercontent.com/81867375/209444756-c0b360ad-2f72-48cf-b1e6-0bffb26f1f93.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3. Update
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**When editted, the previous data still stays for user convenience to ease change needed part. After *Update* button is clicked, the UI changes to normal automatically. **
 
-### `npm run eject`
+<img width="1283" alt="edit" src="https://user-images.githubusercontent.com/81867375/209444784-93e837dd-769a-4893-babd-ceb73f45e793.png">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 4. Empty List
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<img width="1285" alt="empty" src="https://user-images.githubusercontent.com/81867375/209444791-5dd13da3-194d-4c41-b7cf-d47e8c329760.png">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 5. Selection
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img width="1261" alt="selection" src="https://user-images.githubusercontent.com/81867375/209444806-951e7ce6-f779-4b38-97de-d9d75d05bee5.png">
