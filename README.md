@@ -1,6 +1,6 @@
 # MyLDB - Online Library Management System | Mern Stack App
 
-> This app can be used for online library management. You can use it for coolecting your book DB, noting quotes from books, managing your book borrowings, lendings. Also it can be useful for keeping up  what kind of books you finished and for setting goals and working with them
+> This app can be used for online library management, for collecting books DB, noting quotes from books, managing book borrowings, lendings. Moreover, it can be useful for keeping up what kind of books user have been finished and for setting goals and working with them
 
 1. React with functional components & hooks ✅            
 2. React router ✅          
