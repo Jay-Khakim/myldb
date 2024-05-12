@@ -1,10 +1,12 @@
 .gpt3__footer{
     /* color: white; */
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: var(--color-footer);
+    
 }
 
 .gpt3__footer-heading {
