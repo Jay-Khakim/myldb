@@ -1,6 +1,6 @@
 # MyLDB - Online Library Management System | Mern Stack App
 
-> This app can be used for online library management. You can use it for coolecting your book DB, noting quotes from books, managing your book borrowings, lendings. Also it can be useful for keeping up  what kind of books you finished and for setting goals and working with them
+> This app can be used for online library management, for collecting books DB, noting quotes from books, managing book borrowings, lendings. Moreover, it can be useful for keeping up what kind of books user have been finished and for setting goals and working with them
 
 1. React with functional components & hooks ✅            
 2. React router ✅          
@@ -22,15 +22,17 @@
 
 ## 1. Main UI
 
-<img width="1264" alt="ui-main" src="https://user-images.githubusercontent.com/81867375/209444747-861ac9cd-1b4a-49c1-8096-a235da2e2061.png">
+![image_2023-11-30_15-10-45](https://github.com/Jay-Khakim/myldb/assets/68965155/379f31b0-c229-4bc8-90aa-15c21a0de313)
+
 
 ---
 
-## 2. Create
+## 2. Add
 
-**Create button lets user to create new userData. There is a button to close the *Add User* window.**
+**Add button lets user to add new Book. 
 
-<img width="1278" alt="create" src="https://user-images.githubusercontent.com/81867375/209444756-c0b360ad-2f72-48cf-b1e6-0bffb26f1f93.png">
+![image](https://github.com/Jay-Khakim/myldb/assets/68965155/e3ff5fff-98d6-41cc-8eaf-ade7e5cda732)
+
 
 ---
 
@@ -38,14 +40,14 @@
 
 **When editted, the previous data still stays for user convenience to ease change needed part. After *Update* button is clicked, the UI changes to normal automatically. **
 
-<img width="1283" alt="edit" src="https://user-images.githubusercontent.com/81867375/209444784-93e837dd-769a-4893-babd-ceb73f45e793.png">
+![image](https://github.com/Jay-Khakim/myldb/assets/68965155/83beb151-14c7-42b3-90cd-cab183f10d01)
 
 ---
 
-## 4. Empty List
+## 4. Quotes page
+** In Quotes page user can add quotes and also delete
 
-<img width="1285" alt="empty" src="https://user-images.githubusercontent.com/81867375/209444791-5dd13da3-194d-4c41-b7cf-d47e8c329760.png">
+![image](https://github.com/Jay-Khakim/myldb/assets/68965155/edd92417-cf8c-4dbc-b844-1614182685ca)
 
-## 5. Selection
 
-<img width="1261" alt="selection" src="https://user-images.githubusercontent.com/81867375/209444806-951e7ce6-f779-4b38-97de-d9d75d05bee5.png">
+
